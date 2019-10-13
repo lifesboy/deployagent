@@ -3,7 +3,7 @@ import os
 from web.app import app
 
 
-@app.route('/shipweb/deploy')
+@app.route('/shipweb/deploy', methods=["GET", "POST"])
 def shipweb_deploy():
     os.system('cd /opt/shipweb-src/'
               # ' && mkdir /opt/deployagent/logs'

@@ -3,7 +3,7 @@ import os
 from web.app import app
 
 
-@app.route('/deployagent/deploy')
+@app.route('/deployagent/deploy', methods=["GET","POST"])
 def deployagent_deploy():
     os.system('cd /opt/deployagent/'
               # ' && mkdir /opt/deployagent/logs'
