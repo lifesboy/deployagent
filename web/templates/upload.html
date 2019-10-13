@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm đường ship</title>
+    <style type="text/css">
+        html {
+            font-family: "Arial";
+        }
+        table.demo-data {
+            border: #ccc 1px solid;
+            border-spacing: 0;
+        }
+        table.demo-data thead {
+            background: #eee;
+        }
+        table.demo-data td, table.demo-data th {
+            border: #ccc 1px solid;
+            padding: .3em;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="/" enctype="multipart/form-data">
+        <div>
+            <label>Thêm file dữ liệu </label><input type="file" name="file" autocomplete="off" required />
+            <input type="submit" value="Tải lên">
+        </div>
+    </form>
+    <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flashes" style="color: darkred">
+            {% for message in messages %}
+             <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </p>
+    <hr/>
+    <div>
+        <form action="/solve/" method="get">
+            <h4>Chọn file dữ liệu giao hàng để tính toán</h4>
+            <ul>
+                {% for data in current_data %}
+                  <li>
+                    <div>
+                      <input type="radio" name="data" value="{{data['f']}}" required>
+                      <label>{{ data['f'] }}</label>
+                    </div>
+                  </li>
+                {% endfor %}
+            </ul>
+            <div>
+                <label>Số lượng xe </label>
+                <input type="number" name="n" value="1" min="1">
+                <input type="submit" value="Tìm đường" />
+            </div>
+        </form>
+    </div>
+    <br />
+    <hr/>
+    <div id="problem">
+        <div class="topic">
+            <h4>Bài toán</h4>
+            <p>
+                Giả sử bạn có 1 đơn hàng từ Ga Hà Nội (GAHN) đi Bến xe Mỹ Đình (BXMĐ) có khối lượng là 20kg. Khoảng cách di chuyển là 9.2km.<br />
+                Lat và Long trên bản đồ của GAHN là [21.0241419, 105.8414243] và BXMĐ là [21.0274387, 105.778834].<br />
+                Dữ liệu đầu vào của bạn sẽ được xây dựng như sau:
+            </p>
+            <table class="demo-data" border="1">
+                <thead>
+                    <tr>
+                        <th>s.id</th>
+                        <th>s.x</th>
+                        <th>s.y</th>
+                        <th>e.id</th>
+                        <th>e.x</th>
+                        <th>e.y</th>
+                        <th>d</th>
+                        <th>m</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GAHN</td>
+                        <td>21.0241419</td>
+                        <td>105.8414243</td>
+                        <td>BXMĐ</td>
+                        <td>21.0274387</td>
+                        <td>105.778834</td>
+                        <td>9.2</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br/>
+        <img style="height: 250px" src="/static/img/guide1.jpg">
+    </div>
+</body>
+</html>
