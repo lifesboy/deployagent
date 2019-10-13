@@ -4,7 +4,7 @@ from web.app import app
 
 
 @app.route('/shipweb/deploy')
-def data_list():
+def shipweb_deploy():
     os.system('cd /opt/shipweb-src/'
               # ' && mkdir /opt/deployagent/logs'
               ' && git pull >> /opt/deployagent/logs/shipweb.txt'

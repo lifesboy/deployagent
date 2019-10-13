@@ -4,7 +4,7 @@ from web.app import app
 
 
 @app.route('/deployagent/deploy')
-def data_list():
+def deployagent_deploy():
     os.system('cd /opt/deployagent/'
               # ' && mkdir /opt/deployagent/logs'
               ' && git pull >> /opt/deployagent/logs/deployagent.txt'
