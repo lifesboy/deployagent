@@ -1,1 +1,1 @@
-from web.controllers import webshipcontroller
+from web.controllers import shipwebcontroller

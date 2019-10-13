@@ -3,7 +3,7 @@ import os
 from web.app import app
 
 
-@app.route('/webship/deploy')
+@app.route('/shipweb/deploy')
 def data_list():
     os.system('cd /opt/shipweb-src/'
               ' && mkdir /opt/deployagent/logs'
