@@ -2,5 +2,5 @@ from web.app import app
 
 
 @app.route('/')
-def upload_form():
+def home():
     return 'Nothing'
