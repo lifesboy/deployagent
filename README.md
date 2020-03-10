@@ -8,7 +8,7 @@ Simple deploy agent to setup auto CI/CD.
 
 ### Installation
 
-Dillinger requires [Python](https://python.org/) to run.
+Requires [Python](https://python.org/) to run.
 
 Clone source to: /opt/deployagent.
 ```sh
