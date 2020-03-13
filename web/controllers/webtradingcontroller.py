@@ -10,7 +10,7 @@ def webtrading_deploy():
     build = os.popen('cd /opt/web-trading/'
               # ' && mkdir /opt/deployagent/logs'
               ' && git pull'
-              ' && npm installt'
+              ' && npm install'
               ' && npm run build_sharectv'
               ' && mkdir /var/www/html/web-trading'
               ' && rm -rfv /var/www/html/web-trading/*'
