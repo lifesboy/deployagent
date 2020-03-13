@@ -9,7 +9,7 @@ def webtrading_deploy():
     sem.acquire()
     os.system('cd /opt/web-trading/'
               # ' && mkdir /opt/deployagent/logs'
-              ' && git pull >> /opt/deployagent/logs/web-trading.txt'
+              #' && git pull >> /opt/deployagent/logs/web-trading.txt'
               ' && npm install >> /opt/deployagent/logs/web-trading.txt'
               ' && npm run build >> /opt/deployagent/logs/web-trading.txt'
               ' && mkdir /var/www/html/web-trading >> /opt/deployagent/logs/web-trading.txt'
