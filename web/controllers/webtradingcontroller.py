@@ -4,13 +4,16 @@ from web.app import app
 
 sem = threading.Semaphore()
 
-@app.route('/webtrading/deploy', methods=["GET", "POST"])
+@app.route('/web-trading/deploy', methods=["GET", "POST"])
 def webtrading_deploy():
     sem.acquire()
     os.system('cd /opt/web-trading/'
               # ' && mkdir /opt/deployagent/logs'
-              ' && git pull >> /opt/deployagent/logs/holding.txt'
-              ' && rm -rfv /var/www/html/web-trading/* >> /opt/deployagent/logs/holding.txt'
-              ' && cp -Rv /opt/web-trading/release/* /var/www/html/web-trading/ >> /opt/deployagent/logs/holding.txt')
+              ' && git pull >> /opt/deployagent/logs/web-trading.txt'
+              ' && npm install >> /opt/deployagent/logs/web-trading.txt'
+              ' && npm run build >> /opt/deployagent/logs/web-trading.txt'
+              ' && mkdir /var/www/html/web-trading >> /opt/deployagent/logs/web-trading.txt'
+              ' && rm -rfv /var/www/html/web-trading/* >> /opt/deployagent/logs/web-trading.txt'
+              ' && cp -Rv /opt/web-trading/dist/web-trading/* /var/www/html/web-trading/ >> /opt/deployagent/logs/web-trading.txt')
     sem.release()
     return '1'

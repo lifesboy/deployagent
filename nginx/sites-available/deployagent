@@ -1,0 +1,13 @@
+server {
+    server_name deployagent.example.com;
+    location / {
+            include uwsgi_params;
+            uwsgi_pass 127.0.0.1:2000;
+            #uwsgi_pass unix:/tmp/deployagent.sock;
+    }
+
+    #listen [::]:443 ssl;
+    #listen 443 ssl;
+    #ssl_certificate /etc/letsencrypt/live/shipping.example.com/fullchain.pem;
+    #ssl_certificate_key /etc/letsencrypt/live/shipping.example.com/privkey.pem;
+}

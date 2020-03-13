@@ -27,3 +27,10 @@ $ sudo chmod 644 /etc/systemd/system/deployagent.service
 $ sudo systemctl start deployagent
 $ sudo systemctl status deployagent
 ```
+
+Intergrate deployagent service if server is running nginx
+```sh
+$ sudo cp /opt/deployagent/nginx/sites-available/deployagent /etc/nginx/sites-available/
+$ sudo ln -s /etc/nginx/sites-available/deployagent /etc/nginx/sites-enabled/deployagent
+$ sudo systemctl restart nginx.service
+```
