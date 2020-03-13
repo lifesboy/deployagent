@@ -12,7 +12,7 @@ Requires [Python](https://python.org/) to run.
 
 Clone source to: /opt/deployagent.
 ```sh
-$ git clone -b release git@github.com:lifesboy/deployagent.git /opt/deployagent
+$ git clone -b release https://github.com/lifesboy/deployagent.git /opt/deployagent
 ```
 
 Install deployagent service
