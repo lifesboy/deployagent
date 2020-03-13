@@ -35,3 +35,9 @@ $ sudo cp /opt/deployagent/nginx/sites-available/deployagent /etc/nginx/sites-av
 $ sudo ln -s /etc/nginx/sites-available/deployagent /etc/nginx/sites-enabled/deployagent
 $ sudo systemctl restart nginx.service
 ```
+
+If you use HTTPS git repos, try manually pull for first time, and enable long cache to by pass inputing password
+```sh
+$ git config --global credential.helper cache
+$ git config --global credential.helper 'cache --timeout=2592000'
+```
