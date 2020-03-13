@@ -9,10 +9,10 @@ def webtrading_deploy():
     sem.acquire()
     build = os.popen('cd /opt/web-trading/'
               # ' && mkdir /opt/deployagent/logs'
-              ' && git pull'
+              ' && git pull && git status'
               ' && npm install'
               ' && npm run build_sharectv'
-              ' && mkdir /var/www/html/web-trading'
+              #' && mkdir /var/www/html/web-trading'
               ' && rm -rfv /var/www/html/web-trading/*'
               ' && cp -Rv /opt/web-trading/dist/web-trading/* /var/www/html/web-trading/').read()
     sem.release()
