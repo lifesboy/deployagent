@@ -11,6 +11,6 @@ def mt4interface_deploy():
               #' && mkdir /opt/deployagent/logs'
               #' && git pull >> /opt/deployagent/logs/mt4-interface.txt'
               ' && npm install >> /opt/deployagent/logs/mt4-interface.txt'
-              ' && pm2 start ecosystem.config.js >> /opt/deployagent/logs/mt4-interface.txt')
+              ' && pm2 start ecosystem.config.js --env development-3100 >> /opt/deployagent/logs/mt4-interface.txt')
     sem.release()
     return '1'
