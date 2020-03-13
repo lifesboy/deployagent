@@ -10,6 +10,11 @@ Simple deploy agent to setup auto CI/CD.
 
 Requires [Python](https://python.org/) to run.
 
+Install webservice:
+```sh
+$ apt-get install uwsgi -y
+```
+
 Clone source to: /opt/deployagent.
 ```sh
 $ git clone -b release https://github.com/lifesboy/deployagent.git /opt/deployagent
