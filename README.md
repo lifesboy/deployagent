@@ -13,6 +13,7 @@ Requires [Python](https://python.org/) to run.
 Install webservice:
 ```sh
 $ apt-get install uwsgi -y
+$ apt-get install uwsgi-plugin-python -y
 ```
 
 Clone source to: /opt/deployagent.
