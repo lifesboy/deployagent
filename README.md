@@ -3,8 +3,6 @@
 Simple deploy agent to setup auto CI/CD.
 
   - Installation
-  - Setup git webhook
-  - Setup deploy environment
 
 ### Installation
 
