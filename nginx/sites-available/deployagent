@@ -1,4 +1,6 @@
 server {
+    listen 2020;
+    listen [::]:2020;
     server_name deployagent.example.com;
     location / {
             include uwsgi_params;
