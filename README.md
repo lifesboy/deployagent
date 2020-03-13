@@ -17,7 +17,7 @@ $ git clone -b release https://github.com/lifesboy/deployagent.git /opt/deployag
 
 Install deployagent service
 ```sh
-$ sudo cp /opt/deployagent/deployagent.service $ /etc/systemd/system/deployagent.service
+$ sudo cp /opt/deployagent/deployagent.service /etc/systemd/system/deployagent.service
 $ sudo chmod 644 /etc/systemd/system/deployagent.service
 $ sudo systemctl start deployagent
 $ sudo systemctl status deployagent
