@@ -4,8 +4,8 @@ from web.app import app
 
 sem = threading.Semaphore()
 
-@app.route('/web-trading/deploy', methods=["GET", "POST"])
-def shipweb_deploy():
+@app.route('/webtrading/deploy', methods=["GET", "POST"])
+def webtrading_deploy():
     sem.acquire()
     os.system('cd /opt/web-trading/'
               # ' && mkdir /opt/deployagent/logs'
