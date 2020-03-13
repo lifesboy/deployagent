@@ -7,7 +7,6 @@ sem = threading.Semaphore()
 @app.route('/autodeploy/deploy', methods=["GET", "POST"])
 def shipweb_deploy():
     sem.acquire()
-    request.
     os.system('cd /opt/web-trading/'
               # ' && mkdir /opt/deployagent/logs'
               ' && git pull >> /opt/deployagent/logs/holding.txt'
