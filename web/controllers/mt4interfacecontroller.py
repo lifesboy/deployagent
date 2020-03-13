@@ -13,4 +13,4 @@ def mt4interface_deploy():
               ' && npm install'
               ' && pm2 start ecosystem.config.js --env development-3100').read()
     sem.release()
-    return build
+    return "<br />".join(build.split("\n"))

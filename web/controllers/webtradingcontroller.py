@@ -16,4 +16,4 @@ def webtrading_deploy():
               ' && rm -rfv /var/www/html/web-trading/*'
               ' && cp -Rv /opt/web-trading/dist/web-trading/* /var/www/html/web-trading/').read()
     sem.release()
-    return build
+    return "<br />".join(build.split("\n"))
