@@ -7,3 +7,4 @@ from web.controllers import webtradingcontroller
 from web.controllers import mt4interfacecontroller
 from web.controllers import webforexwebcontroller
 from web.controllers import webforexdashboardcontroller
+from web.controllers import webforexapiinterface
