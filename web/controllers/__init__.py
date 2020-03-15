@@ -6,3 +6,4 @@ from web.controllers import autodeploycontroller
 from web.controllers import webtradingcontroller
 from web.controllers import mt4interfacecontroller
 from web.controllers import webforexwebcontroller
+from web.controllers import webforexdashboardcontroller
