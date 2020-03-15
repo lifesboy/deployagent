@@ -8,10 +8,10 @@ sem = threading.Semaphore()
 @app.route('/deployagent/deploy', methods=["GET", "POST"])
 def deployagent_deploy():
     sem.acquire()
-    os.system('cd /opt/deployagent/'
+    build = os.popen('cd /opt/deployagent/'
               # ' && mkdir /opt/deployagent/logs'
-              ' && git pull >> /opt/deployagent/logs/deployagent.txt'
-              ' && systemctl restart deployagent.service >> /opt/deployagent/logs/deployagent.txt'
-              ' && systemctl status deployagent.service >> /opt/deployagent/logs/deployagent.txt')
+              ' && git pull'
+              ' && systemctl restart deployagent.service'
+              ' && systemctl status deployagent.service').read()
     sem.release()
-    return '1'
+    return "<br />".join(build.split("\n"))
