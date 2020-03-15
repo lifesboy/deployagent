@@ -14,6 +14,6 @@ def webforexweb_deploy():
               ' && nnpm run build_sharectv'
               #' && mkdir /var/www/html/web'
               ' && rm -rfv /var/www/html/web/*'
-              ' && cp -Rv /opt/web/dist/web/* /var/www/html/web/').read()
+              ' && cp -Rv /opt/web/dist/web-info/* /var/www/html/web/').read()
     sem.release()
     return "<br />".join(build.split("\n"))
