@@ -5,7 +5,7 @@ from web.app import app
 sem = threading.Semaphore()
 
 @app.route('/webforexdashboard/deploy', methods=["GET", "POST"])
-def webforexweb_deploy():
+def webforexdashboard_deploy():
     sem.acquire()
     build = os.popen('cd /opt/dashboard/'
               # ' && mkdir /opt/deployagent/logs'
