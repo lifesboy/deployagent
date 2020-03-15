@@ -11,9 +11,9 @@ def webforexweb_deploy():
               # ' && mkdir /opt/deployagent/logs'
               ' && git pull && git status'
               ' && npm install'
-              ' && npm run build_sharectv'
+              ' && nnpm run build_sharectv'
               #' && mkdir /var/www/html/web'
               ' && rm -rfv /var/www/html/web/*'
-              ' && cp -Rv /opt/web/dist/webforexweb/* /var/www/html/web/').read()
+              ' && cp -Rv /opt/web/dist/web/* /var/www/html/web/').read()
     sem.release()
     return "<br />".join(build.split("\n"))
